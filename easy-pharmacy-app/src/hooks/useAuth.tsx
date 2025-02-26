@@ -2,11 +2,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import { z } from "zod";
 
-const validUser = {
-  name: "Admin",
-  email: "admin@mail.com",
-  password: "admin123",
-};
+// const validUser = {
+//   name: "Admin",
+//   email: "admin@mail.com",
+//   password: "admin123",
+// };
 
 const useAuth = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -40,14 +40,17 @@ const useAuth = () => {
 
     setErrors({});
 
-    if (email !== validUser.email || password !== validUser.password) {
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const user = users.find((user: { email: string; password: string }) => user.email === email && user.password === password);
+
+    if (!user) {
       setError("Invalid username or password");
       return;
     }
 
     setIsLoggedIn(true);
-    setUser(validUser);
-    localStorage.setItem("user", JSON.stringify(validUser));
+    setUser(user);
+    localStorage.setItem("user", JSON.stringify(user));
     navigate("/", { replace: true });
   };
 

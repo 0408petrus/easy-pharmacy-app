@@ -33,7 +33,7 @@ export default function DrugItem({ drug }: { drug: DrugType }) {
       <div className="text-dark-400 mb-4">Stock: {drug.stock}</div>
       <div className="grid grid-cols-2 gap-x-5 mt-auto w-full">
         <Button onClick={handleReadMore} label="Read More" />
-        <Button onClick={handleChart} label="Add to Cart" className="bg-orange-500" />
+        <Button onClick={handleChart} label="Add to Cart" className="bg-orange-500" disabled={drug.stock === 0} />
       </div>
       </div>
     </>

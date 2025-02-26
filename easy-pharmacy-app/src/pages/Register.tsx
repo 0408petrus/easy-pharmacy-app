@@ -30,6 +30,11 @@ export default function Register() {
   function registerUser(data: RegisterData) {
     console.log(data)
     alert(JSON.stringify(data))
+    
+    // Save user data to local storage
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    users.push(data);
+    localStorage.setItem('users', JSON.stringify(users));
   }
 
   return (

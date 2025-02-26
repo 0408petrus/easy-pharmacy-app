@@ -1,15 +1,30 @@
 import { useNavigate, useParams } from "react-router";
+import { useEffect, useState } from "react";
 import Button from "../components/UI/Button";
-import drugs from "../stores/drugs.json";
 import { DrugType } from "../components/DrugItem";
 import MainLayout from "../layout/MainLayout";
+import { useChart } from "../context/ChartContext";
 
 export default function Drug() {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const drug: DrugType = drugs.find(
-    (drug) => drug.id === parseInt(id as string)
-  )!;
+  const [drug, setDrug] = useState<DrugType | null>(null);
+  const { addToChart, drugStock } = useChart();
+
+  useEffect(() => {
+    const fetchedDrug = drugStock.find((drug) => drug.id === parseInt(id as string));
+    setDrug(fetchedDrug || null);
+  }, [id, drugStock]);
+
+  function handleChart() {
+    if (drug && drug.stock > 0) {
+      addToChart(drug);
+    }
+  }
+
+  if (!drug) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <MainLayout>
@@ -45,6 +60,7 @@ export default function Drug() {
                 </div>
                 <h3 className="font-semibold">Deskripsi</h3>
                 <p>{drug.description}</p>
+                <Button onClick={handleChart} label="Add to Cart" className="bg-orange-500" disabled={drug.stock === 0} />
               </div>
             </div>
           </div>

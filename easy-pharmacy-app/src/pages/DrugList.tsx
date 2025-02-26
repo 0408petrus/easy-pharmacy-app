@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import drugs from "../stores/drugs.json";
 import { useSearchParams } from "react-router";
 import DrugItem from "../components/DrugItem";
 import Header from "../components/Header";
+import { useChart } from "../context/ChartContext";
 
 export default function DrugList() {
   console.log('DrugList rendered')
-  const [filteredDrugs, setFilteredDrugs] = useState(drugs);
+  const { drugStock } = useChart();
+  const [filteredDrugs, setFilteredDrugs] = useState(drugStock);
   const authorRef = useRef<HTMLSelectElement>(null)
   const logRef = useRef<string[]>([])
 
@@ -16,26 +17,26 @@ export default function DrugList() {
     const keyword = searchParams.get('keyword')
 
     if (!keyword) {
-      setFilteredDrugs(drugs)
+      setFilteredDrugs(drugStock)
       return
     }
 
-    const filtered = drugs.filter((drug) => {
+    const filtered = drugStock.filter((drug) => {
       return drug.title.toLowerCase().includes(keyword.toLowerCase())
     })
 
     setFilteredDrugs(filtered)
-  }, [searchParams])
+  }, [searchParams, drugStock])
 
   function handleChange(value: string) {
     const keyword = value
 
     if (keyword === "") {
-      setFilteredDrugs(drugs)
+      setFilteredDrugs(drugStock)
       return
     }
 
-    const filtered = drugs.filter((drug) => {
+    const filtered = drugStock.filter((drug) => {
       return drug.title.toLowerCase().includes(keyword.toLowerCase())
     })
 
