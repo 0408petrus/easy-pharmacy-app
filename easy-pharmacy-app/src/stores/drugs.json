@@ -1,0 +1,162 @@
+[
+    {
+      "id": 1,
+      "title": "Betadine Solution",
+      "description": "Antiseptik untuk luka dan infeksi kulit",
+      "price": "Rp120.000",
+      "stock": 70,
+      "imageURL": "https://res.cloudinary.com/dk0z4ums3/image/upload/v1686622813/attached_image/6-cairan-antiseptik-yang-ampuh-bunuh-kuman-1-alodokter.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Minyak Kayu Putih Cap Lang",
+      "description": "Meredakan gatal, nyeri, dan perut kembung",
+      "price": "Rp15.000",
+      "stock": 50,
+      "imageURL": "https://d2qjkwm11akmwu.cloudfront.net/products/712762_19-5-2023_15-2-41.webp"
+    },
+    {
+      "id": 3,
+      "title": "Insto Drops",
+      "description": "Obat tetes mata untuk mata merah dan iritasi",
+      "price": "Rp25.000",
+      "stock": 71,
+      "imageURL": "https://d3bbrrd0qs69m4.cloudfront.net/images/product/apotek_online_k24klik_20201204101144359225_INSTO-REGULAR.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Pocari Sweat",
+      "description": "Minuman ion untuk rehidrasi",
+      "price": "Rp10.000",
+      "stock": 5,
+      "imageURL": "https://d2qjkwm11akmwu.cloudfront.net/products/163812_27-5-2022_17-25-30-1665803703.webp"
+    },
+    {
+      "id": 5,
+      "title": "Salonpas",
+      "description": "Pereda nyeri otot dan sendi",
+      "price": "Rp20.000",
+      "stock": 58,
+      "imageURL": "https://res.cloudinary.com/dk0z4ums3/image/upload/v1692150575/attached_image/salonpas.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Paracetamol",
+      "description": "Obat penurun demam dan pereda nyeri",
+      "price": "Rp5.000",
+      "stock": 83,
+      "imageURL": "https://bernofarm.com/wp-content/uploads/2021/11/PARACETAMOL-500-mg-KAPLET.png"
+    },
+    {
+      "id": 7,
+      "title": "Retin-A",
+      "description": "Krim untuk jerawat dan perawatan kulit",
+      "price": "Rp150.000",
+      "stock": 56,
+      "imageURL": "https://image-cdn.medkomtek.com/XD5dI6fwoUcnU5qN9wXnQrwFKqE=/673x373/smart/klikdokter-media-buckets/medias/2311173/original/060965200_1578299550-Retin-A_0_1__Krim_20_Gram_1.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Counterpain",
+      "description": "Pereda nyeri otot dan sendi",
+      "price": "Rp30.000",
+      "stock": 88,
+      "imageURL": "https://d2qjkwm11akmwu.cloudfront.net/products/2020-1665761233.webp"
+    },
+    {
+      "id": 9,
+      "title": "Obat Batuk Hitam",
+      "description": "Obat batuk herbal tradisional",
+      "price": "Rp12.000",
+      "stock": 76,
+      "imageURL": "https://d2qjkwm11akmwu.cloudfront.net/products/11528-1665782172.webp"
+    },
+    {
+      "id": 10,
+      "title": "Zyprexa",
+      "description": "Obat untuk gangguan mental",
+      "price": "Rp200.000",
+      "stock": 30,
+      "imageURL": "https://d2qjkwm11akmwu.cloudfront.net/products/334977_20-1-2021_16-38-48-1665793780.webp"
+    },
+    {
+      "id": 11,
+      "title": "Sulfur Soap",
+      "description": "Sabun untuk jerawat dan kulit berminyak",
+      "price": "Rp25.000",
+      "stock": 41,
+      "imageURL": "https://d2qjkwm11akmwu.cloudfront.net/products/334977_20-1-2021_16-38-48-1665793780.webp"
+    },
+    {
+      "id": 12,
+      "title": "Cialis",
+      "description": "Obat untuk disfungsi ereksi",
+      "price": "Rp300.000",
+      "stock": 20,
+      "imageURL": "https://d2qjkwm11akmwu.cloudfront.net/products/864-1.webp"
+    },
+    {
+      "id": 13,
+      "title": "Bodrex Flu & Batuk",
+      "description": "Obat flu dan batuk",
+      "price": "Rp8.000",
+      "stock": 68,
+      "imageURL": "https://d2qjkwm11akmwu.cloudfront.net/products/9173-1665884751.webp"
+    },
+    {
+      "id": 14,
+      "title": "Minyak Telon",
+      "description": "Minyak untuk menghangatkan tubuh bayi",
+      "price": "Rp18.000",
+      "stock": 30,
+      "imageURL": "https://d2qjkwm11akmwu.cloudfront.net/products/222010_26-4-2023_13-52-38.webp"
+    },
+    {
+      "id": 15,
+      "title": "Pil KB",
+      "description": "Kontrasepsi oral",
+      "price": "Rp50.000",
+      "stock": 91,
+      "imageURL": "https://down-id.img.susercontent.com/file/sg-11134201-23010-jd8d7d0medmv1e"
+    },
+    {
+      "id": 16,
+      "title": "Canesten",
+      "description": "Krim antijamur untuk infeksi kulit",
+      "price": "Rp40.000",
+      "stock": 52,
+      "imageURL": "https://d2qjkwm11akmwu.cloudfront.net/products/828880_26-1-2024_10-28-43.png"
+    },
+    {
+      "id": 17,
+      "title": "Sunscreen SPF 50",
+      "description": "Tabir surya untuk melindungi kulit dari UV",
+      "price": "Rp80.000",
+      "stock": 57,
+      "imageURL": "https://www.sociolla.com/cdn-cgi/image/w=244,format=auto,dpr=1.45/https://images.soco.id/dafe6f6b-c075-4c25-ac08-863ef34a6bbf-image-0-1724657815528"
+    },
+    {
+      "id": 18,
+      "title": "OBH Combi",
+      "description": "Obat batuk hitam",
+      "price": "Rp22.000",
+      "stock": 45,
+      "imageURL": "https://www.sociolla.com/cdn-cgi/image/w=244,format=auto,dpr=1.45/https://images.soco.id/dafe6f6b-c075-4c25-ac08-863ef34a6bbf-image-0-1724657815528"
+    },
+    {
+      "id": 19,
+      "title": "Bedak Dingin",
+      "description": "Bedak untuk menenangkan kulit",
+      "price": "Rp10.000",
+      "stock": 14,
+      "imageURL": "https://d2qjkwm11akmwu.cloudfront.net/products/713000_20-8-2021_14-19-4-1665813773.webp"
+    },
+    {
+      "id": 20,
+      "title": "Progesteron Cream",
+      "description": "Krim untuk terapi hormon",
+      "price": "Rp250.000",
+      "stock": 71,
+      "imageURL": "https://down-id.img.susercontent.com/file/87a29e2374e5bcab93c5c2ca580f400e"
+    }
+  ]
