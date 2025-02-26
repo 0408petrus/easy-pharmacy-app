@@ -15,11 +15,18 @@ type ChartContextType = {
 const ChartContext = createContext<ChartContextType | undefined>(undefined);
 
 export const ChartProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
-  const [chart, setChart] = useState<DrugType[]>([]);
+  const [chart, setChart] = useState<DrugType[]>(() => {
+    const savedChart = localStorage.getItem('chart');
+    return savedChart ? JSON.parse(savedChart) : [];
+  });
   const [drugStock, setDrugStock] = useState<BaseDrugType[]>(() => {
     const savedStock = localStorage.getItem('drugStock');
     return savedStock ? JSON.parse(savedStock) : drugs;
   });
+
+  useEffect(() => {
+    localStorage.setItem('chart', JSON.stringify(chart));
+  }, [chart]);
 
   useEffect(() => {
     localStorage.setItem('drugStock', JSON.stringify(drugStock));
