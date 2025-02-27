@@ -32,13 +32,13 @@ export default function Header({ onSearch }: HeaderProps) {
           onClick={() => navigate("/chart")} 
           className="flex items-center gap-2 hover:bg-blue-400 p-2 rounded transition-all duration-300"
         >
-          <img src="../public/chart.webp" alt="Chart" className="h-8 w-8" />
+          <img src="/chart.webp" alt="Chart" className="h-8 w-8" />
         </button>
         <button 
           onClick={logout} 
           className="flex items-center gap-2 hover:bg-blue-400 p-2 rounded transition-all duration-300"
         >
-          <img src="../public/logout.png" alt="Logout" className="h-7 w-7" />
+          <img src="/logout.png" alt="Logout" className="h-7 w-7" />
         </button>
       </div>
     </header>
