@@ -50,10 +50,10 @@ export default function DrugList() {
       <div className="flex gap-2 justify-center my-8">
       </div>
 
-      <div className="max-w-[1024px] m-auto flex flex-wrap gap-8 justify-center">
+      <div className="max-w-[1024px] m-auto flex flex-wrap gap-8 justify-center px-4 md:px-0">
         {filteredDrugs.map((drug) => {
           return (
-            <div className="border border-slate-300 w-[320px] rounded-lg" key={drug.id} onClick={() => {
+            <div className="border border-slate-300 w-full sm:w-[320px] rounded-lg" key={drug.id} onClick={() => {
               console.log('Drug clicked', drug.title)
               logRef.current.push(drug.title)
               console.log(logRef.current)
