@@ -1,8 +1,10 @@
 import { Link, useNavigate } from "react-router";
 import Input from "./UI/Input";
 
+import {FaCartPlus, FaDoorClosed } from 'react-icons/fa6'
+
 interface HeaderProps {
-  onSearch: (value: string) => void;
+  onSearch?: (value: string) => void;
 }
 
 export default function Header({ onSearch }: HeaderProps) {
@@ -22,23 +24,25 @@ export default function Header({ onSearch }: HeaderProps) {
       </div>
 
       <div className="flex gap-4 justify-center items-center">
-        <Input
+        {onSearch && (<Input
           placeholder="Search"
           onChange={(value: string) => onSearch(value)}
           className="w-[200px]"
         />
+        )}
         <div>Welcome, {user.name}!</div>
         <button 
           onClick={() => navigate("/chart")} 
           className="flex items-center gap-2 hover:bg-blue-400 p-2 rounded transition-all duration-300"
         >
-          <img src="/chart.webp" alt="Chart" className="h-8 w-8" />
+          <FaCartPlus className="h-8 w-8"/>
         </button>
+        
         <button 
           onClick={logout} 
           className="flex items-center gap-2 hover:bg-blue-400 p-2 rounded transition-all duration-300"
         >
-          <img src="/logout.png" alt="Logout" className="h-7 w-7" />
+          <FaDoorClosed className="h-7 w-7"/>
         </button>
       </div>
     </header>

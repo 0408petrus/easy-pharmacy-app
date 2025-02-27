@@ -37,9 +37,11 @@ export default function Input({
           ${error ? 'border-red-500' : 'border-slate-200'}
           py-1
           px-3
-          rounded-md
-          dark:bg-slate-800
+          rounded-xl
+          bg-white-800
           dark:text-white 
+          text-black
+          bg-slate-100
           hover:border-slate-300
           hover:bg-slate-50
           focus:border-slate-300

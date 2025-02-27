@@ -2,6 +2,7 @@ import React from 'react';
 import { useChart } from '../context/ChartContext';
 import Chart from './Chart';
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
 
 const ChartList: React.FC = () => {
   const { chart, removeFromChart } = useChart();
@@ -21,6 +22,8 @@ const ChartList: React.FC = () => {
   };
 
   return (
+    <>
+    <Header/>
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Chart List</h1>
       <button onClick={handleBack} className="bg-blue-500 text-white px-4 py-2 rounded mb-4">Back</button>
@@ -33,6 +36,8 @@ const ChartList: React.FC = () => {
         ))}
       </div>
     </div>
+    </>
+    
   );
 };
 
