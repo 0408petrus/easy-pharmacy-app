@@ -117,11 +117,11 @@ export default function Register() {
       </form>
       {showPopup && (
         <div className="fixed inset-0 flex justify-center items-center">
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center animate-bounce z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center z-50">
             <h2 className="text-2xl mb-4">Registration Successful!</h2>
             <NavLink
               to="/login"
-              className="mt-4 border border-blue-500 text-blue-500 py-1 px-3 rounded-md cursor-pointer"
+              className="mt-4 border border-green-500 text-green-500 py-1 px-3 rounded-md cursor-pointer"
             >
               Go to Login
             </NavLink>
