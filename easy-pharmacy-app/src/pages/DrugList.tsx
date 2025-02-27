@@ -3,29 +3,40 @@ import { useSearchParams } from "react-router";
 import DrugItem from "../components/DrugItem";
 import Header from "../components/Header";
 import { useChart } from "../context/ChartContext";
+import FilterSortControls from "../components/FilterSortControls"; // Import new component
 
 export default function DrugList() {
   console.log('DrugList rendered')
   const { drugStock } = useChart();
   const [filteredDrugs, setFilteredDrugs] = useState(drugStock);
   const logRef = useRef<string[]>([])
+  const [sortOrder, setSortOrder] = useState("name-asc");
+  const [showInStock, setShowInStock] = useState(false);
 
   const [searchParams] = useSearchParams()
 
   useEffect(() => {
-    const keyword = searchParams.get('keyword')
+    const keyword = searchParams.get('keyword');
+    let filtered = drugStock;
 
-    if (!keyword) {
-      setFilteredDrugs(drugStock)
-      return
+    if (keyword) {
+      filtered = filtered.filter((drug) => drug.title.toLowerCase().includes(keyword.toLowerCase()));
     }
 
-    const filtered = drugStock.filter((drug) => {
-      return drug.title.toLowerCase().includes(keyword.toLowerCase())
-    })
+    if (showInStock) {
+      filtered = filtered.filter((drug) => drug.stock > 0);
+    }
 
-    setFilteredDrugs(filtered)
-  }, [searchParams, drugStock])
+    if (sortOrder === "name-asc") {
+      filtered.sort((a, b) => a.title.localeCompare(b.title));
+    } else if (sortOrder === "name-desc") {
+      filtered.sort((a, b) => b.title.localeCompare(a.title));
+    } else if (sortOrder === "stock-desc") {
+      filtered.sort((a, b) => b.stock - a.stock);
+    }
+
+    setFilteredDrugs(filtered);
+  }, [searchParams, drugStock, sortOrder, showInStock]);
 
   function handleChange(value: string) {
     const keyword = value
@@ -46,10 +57,12 @@ export default function DrugList() {
     <>
       <Header onSearch={handleChange} />
       <h1 className="text-center text-3xl my-6 text-black">Drug List</h1>
-
-      <div className="flex gap-2 justify-center my-8">
-      </div>
-
+      <FilterSortControls
+        sortOrder={sortOrder}
+        setSortOrder={setSortOrder}
+        showInStock={showInStock}
+        setShowInStock={setShowInStock}
+      />
       <div className="max-w-[1024px] m-auto flex flex-wrap gap-8 justify-center px-4 md:px-0">
         {filteredDrugs.map((drug) => {
           return (
