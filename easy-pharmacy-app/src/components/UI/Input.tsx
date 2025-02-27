@@ -39,7 +39,6 @@ export default function Input({
           px-3
           rounded-xl
           bg-white-800
-          dark:text-white 
           text-black
           bg-slate-100
           hover:border-slate-300
