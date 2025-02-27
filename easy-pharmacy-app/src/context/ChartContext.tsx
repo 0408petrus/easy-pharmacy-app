@@ -14,13 +14,21 @@ type ChartContextType = {
 
 const ChartContext = createContext<ChartContextType | undefined>(undefined);
 
+const DRUGS_VERSION = '1.0'; // Update this version when drugs.json is updated
+
 export const ChartProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const [chart, setChart] = useState<DrugType[]>(() => {
     const savedChart = localStorage.getItem('chart');
     return savedChart ? JSON.parse(savedChart) : [];
   });
   const [drugStock, setDrugStock] = useState<BaseDrugType[]>(() => {
+    const savedVersion = localStorage.getItem('drugsVersion');
     const savedStock = localStorage.getItem('drugStock');
+    if (savedVersion !== DRUGS_VERSION) {
+      localStorage.removeItem('drugStock');
+      localStorage.setItem('drugsVersion', DRUGS_VERSION);
+      return drugs;
+    }
     return savedStock ? JSON.parse(savedStock) : drugs;
   });
 
