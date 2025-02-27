@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
-import Button from "./UI/Button";
-import { useChart } from "../context/ChartContext";
+import Button from "../UI/Button";
+import { useChart } from "../../context/ChartContext"
 
 export type DrugType = {
   id: number;

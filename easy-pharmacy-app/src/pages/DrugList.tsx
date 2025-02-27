@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router";
-import DrugItem from "../components/DrugItem";
+import DrugItem from "../components/features/DrugItem";
 import Header from "../components/Header";
 import { useChart } from "../context/ChartContext";
-import FilterSortControls from "../components/FilterSortControls"; // Import new component
+import FilterSortControls from "../components/features/FilterSortControls"; // Import new component
 
 export default function DrugList() {
   console.log('DrugList rendered')
@@ -15,7 +15,7 @@ export default function DrugList() {
 
   const [searchParams] = useSearchParams()
 
-  useEffect(() => {
+  useEffect(() => { 
     const keyword = searchParams.get('keyword');
     let filtered = drugStock;
 

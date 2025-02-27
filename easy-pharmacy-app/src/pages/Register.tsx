@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod'
 import { NavLink } from 'react-router';
+import { useState } from 'react';
 
 interface RegisterData {
   name: string;
@@ -27,14 +28,18 @@ export default function Register() {
     resolver: zodResolver(schema)
   })
 
+  const [showPopup, setShowPopup] = useState(false);
+
   function registerUser(data: RegisterData) {
     console.log(data)
-    alert(JSON.stringify(data))
+    // alert(JSON.stringify(data))
     
     // Save user data to local storage
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     users.push(data);
     localStorage.setItem('users', JSON.stringify(users));
+
+    setShowPopup(true);
   }
 
   return (
@@ -48,7 +53,7 @@ export default function Register() {
             type="text"
             id="name"
             placeholder="Name"
-            className="border border-slate-200 py-1 px-3 rounded-md dark:bg-slate-800 dark:text-white hover:border-slate-300 hover:bg-slate-50 focus:border-slate-300"
+            className="border border-slate-200 py-1 px-3 rounded-md bg-white-800 text-dark hover:border-slate-300 hover:bg-slate-50 focus:border-slate-300"
             {...register('name')}
           />
           {errors.name?.message && <p className='text-red-500 text-sm'>{errors.name?.message}</p>}
@@ -60,7 +65,7 @@ export default function Register() {
             type="email"
             id="email"
             placeholder="Email"
-            className="border border-slate-200 py-1 px-3 rounded-md dark:bg-slate-800 dark:text-white hover:border-slate-300 hover:bg-slate-50 focus:border-slate-300"
+            className="border border-slate-200 py-1 px-3 rounded-md bg-white-800 text-dark hover:border-slate-300 hover:bg-slate-50 focus:border-slate-300"
             {...register('email')}
           />
           {errors.email?.message && <p className='text-red-500 text-sm'>{errors.email?.message}</p>}
@@ -72,7 +77,7 @@ export default function Register() {
             type="password"
             id="password"
             placeholder="Password"
-            className="border border-slate-200 py-1 px-3 rounded-md dark:bg-slate-800 dark:text-white hover:border-slate-300 hover:bg-slate-50 focus:border-slate-300"
+            className="border border-slate-200 py-1 px-3 rounded-md bg-white-800 text-black hover:border-slate-300 hover:bg-slate-50 focus:border-slate-300"
             {...register('password')}
           />
           {errors.password?.message && <p className='text-red-500 text-sm'>{errors.password?.message}</p>}
@@ -84,7 +89,7 @@ export default function Register() {
             type="password"
             id="confirmPassword"
             placeholder="Confirm Password"
-            className="border border-slate-200 py-1 px-3 rounded-md dark:bg-slate-800 dark:text-white hover:border-slate-300 hover:bg-slate-50 focus:border-slate-300"
+            className="border border-slate-200 py-1 px-3 rounded-md bg-white-800 text-dark hover:border-slate-300 hover:bg-slate-50 focus:border-slate-300"
             {...register('confirmPassword')}
           />
           {errors.confirmPassword?.message && <p className='text-red-500 text-sm'>{errors.confirmPassword?.message}</p>}
@@ -96,7 +101,7 @@ export default function Register() {
             type="number"
             id="age"
             placeholder="Age"
-            className="border border-slate-200 py-1 px-3 rounded-md dark:bg-slate-800 dark:text-white hover:border-slate-300 hover:bg-slate-50 focus:border-slate-300"
+            className="border border-slate-200 py-1 px-3 rounded-md bg-white-800 text-dark hover:border-slate-300 hover:bg-slate-50 focus:border-slate-300"
             {...register('age', { valueAsNumber: true })}
           />
           {errors.age?.message && <p className='text-red-500 text-sm'>{errors.age?.message}</p>}
@@ -110,6 +115,19 @@ export default function Register() {
           <p className="mt-4 text-center">Have an account? <NavLink to="/login" className="text-blue-500">Login</NavLink></p>
         </div>
       </form>
+      {showPopup && (
+        <div className="fixed inset-0 flex justify-center items-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center animate-bounce z-50">
+            <h2 className="text-2xl mb-4">Registration Successful!</h2>
+            <NavLink
+              to="/login"
+              className="mt-4 border border-blue-500 text-blue-500 py-1 px-3 rounded-md cursor-pointer"
+            >
+              Go to Login
+            </NavLink>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import Button from "../components/UI/Button";
-import { DrugType } from "../components/DrugItem";
+import { DrugType } from "../components/features/DrugItem";
 import MainLayout from "../layout/MainLayout";
 import { useChart } from "../context/ChartContext";
 

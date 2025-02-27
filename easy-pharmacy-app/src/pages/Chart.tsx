@@ -1,5 +1,5 @@
 import React from 'react';
-import { DrugType } from '../components/DrugItem';
+import { DrugType } from '../components/features/DrugItem';
 
 type ChartProps = DrugType & { quantity: number };
 

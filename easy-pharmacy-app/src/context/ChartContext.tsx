@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { DrugType as BaseDrugType } from '../components/DrugItem';
+import { DrugType as BaseDrugType } from '../components/features/DrugItem';
 import drugs from '../stores/drugs.json';
 
 type DrugType = BaseDrugType & { quantity?: number };
