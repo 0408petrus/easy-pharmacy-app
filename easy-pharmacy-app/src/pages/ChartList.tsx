@@ -4,7 +4,7 @@ import Chart from './Chart';
 import { useNavigate } from 'react-router-dom';
 
 const ChartList: React.FC = () => {
-  const { chart, removeFromChart, updateDrugStock } = useChart();
+  const { chart, removeFromChart } = useChart();
   const navigate = useNavigate();
 
   const handleBack = () => {

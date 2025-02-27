@@ -5,7 +5,7 @@ interface MainLayoutProps {
   onSearch?: (value: string) => void;
 }
 
-export default function MainLayout({ children, onSearch }: MainLayoutProps) {
+export default function MainLayout({ children}: MainLayoutProps) {
   return (
     <>
       {/* <Header onSearch={onSearch} /> */}

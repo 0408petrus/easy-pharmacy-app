@@ -8,7 +8,6 @@ export default function DrugList() {
   console.log('DrugList rendered')
   const { drugStock } = useChart();
   const [filteredDrugs, setFilteredDrugs] = useState(drugStock);
-  const authorRef = useRef<HTMLSelectElement>(null)
   const logRef = useRef<string[]>([])
 
   const [searchParams] = useSearchParams()

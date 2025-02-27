@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginForm from "./pages/LoginForm";
-import MainLayout from "./layout/MainLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
