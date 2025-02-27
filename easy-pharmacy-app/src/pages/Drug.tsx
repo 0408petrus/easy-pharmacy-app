@@ -39,11 +39,11 @@ export default function Drug() {
           />
           <div className="space-y-4">
             <p className="flex items-center">
-              <img src="../public/search.png" alt="Search Icon" className="inline-block w-6 h-6 mr-2" />
+              <img src="/search.png" alt="Search Icon" className="inline-block w-6 h-6 mr-2" />
               Cari obat sesuai kebutuhan anda
             </p>
             <p className="flex items-center">
-              <img src="../public/recipe.png" alt="Recipe Icon" className="inline-block w-6 h-6 mr-2" />
+              <img src="/recipe.png" alt="Recipe Icon" className="inline-block w-6 h-6 mr-2" />
               Pilih obat dengan deskripsi
             </p>
             <p><span>&#40;</span>lampirkan resep dokter jika membeli obat keras<span>&#41;</span></p>
